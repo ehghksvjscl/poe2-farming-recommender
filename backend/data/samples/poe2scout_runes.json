@@ -1,0 +1,10 @@
+{
+  "source_url": "https://poe2scout.com/economy/runes",
+  "fetched_at": "2025-12-29T02:46:35.050209+00:00",
+  "status": null,
+  "content_type": null,
+  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "fetch_mode": "remote",
+  "curl_command": "curl -L --compressed -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.9' -H 'Referer: https://poe.ninja/' -H 'User-Agent: Mozilla/5.0 (compatible; poe2-farming-recommender/0.1; +https://github.com/)' 'https://poe2scout.com/economy/runes'",
+  "data": null
+}
