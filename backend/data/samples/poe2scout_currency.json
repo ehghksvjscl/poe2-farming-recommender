@@ -1,6 +1,6 @@
 {
-  "source_url": "https://poe2scout.com/api/items?category=runes&league=Fate%20of%20the%20Vaal",
-  "fetched_at": "2025-12-29T02:54:39.137620+00:00",
+  "source_url": "https://poe2scout.com/api/items?category=currency&league=Fate%20of%20the%20Vaal",
+  "fetched_at": "2025-12-29T02:54:40.533857+00:00",
   "status": 200,
   "content_type": "application/json",
   "error": null,
