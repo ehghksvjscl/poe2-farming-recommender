@@ -2,14 +2,62 @@ import { useState } from "react";
 import "./FarmingForm.css";
 
 const CONTENT_TYPES = [
-  { id: "mapping", label: "맵핑", icon: "🗺️", desc: "경로석 파밍" },
-  { id: "bossing", label: "보스", icon: "👹", desc: "보스 킬링" },
-  { id: "expedition", label: "탐험", icon: "🧭", desc: "탐험 콘텐츠" },
-  { id: "ritual", label: "의식", icon: "🕯️", desc: "의식 제단" },
-  { id: "breach", label: "균열", icon: "💜", desc: "균열 파밍" },
-  { id: "delirium", label: "환영", icon: "🌀", desc: "환영 콘텐츠" },
-  { id: "heist", label: "강탈", icon: "🔓", desc: "강탈 계약서" },
-  { id: "abyss", label: "심연", icon: "🕳️", desc: "심연 콘텐츠" },
+  {
+    id: "mapping",
+    label: "맵핑",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9QaW5uYWNsZUtleTEiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/0d3dddab3b/PinnacleKey1.png",
+    desc: "경로석 파밍",
+  },
+  {
+    id: "bossing",
+    label: "보스",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9IZWxtZXRzL1VuaXF1ZXMvQ3Jvd25PZlRoZVZpY3RvciIsInciOjIsImgiOjIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8397c94ec0/CrownOfTheVictor.png",
+    desc: "보스 킬링",
+  },
+  {
+    id: "expedition",
+    label: "탐험",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9CYXJ0ZXJSZWZyZXNoQ3VycmVuY3kiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b0f42eaf8d/BarterRefreshCurrency.png",
+    desc: "탐험 콘텐츠",
+  },
+  {
+    id: "ritual",
+    label: "의식",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvT21lbnMvVm9vZG9vT21lbnMxUmVkIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/1c90d2eb1f/VoodooOmens1Red.png",
+    desc: "의식 제단",
+  },
+  {
+    id: "breach",
+    label: "균열",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RmlyZSIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/156de12dd6/BreachCatalystFire.png",
+    desc: "균열 파밍",
+  },
+  {
+    id: "delirium",
+    label: "환영",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRGVzcGFpciIsInciOjEsImgiOjEsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/794fb40302/DistilledDespair.png",
+    desc: "환영 콘텐츠",
+  },
+  {
+    id: "heist",
+    label: "강탈",
+    iconUrl:
+      "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkdyZWF0ZXJWYWFsT3JiIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/7ba6f79f63/IncursionGreaterVaalOrb.png",
+    desc: "강탈 계약서",
+  },
+  {
+    id: "abyss",
+    label: "심연",
+    iconUrl:
+      "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQWJ5c3MvUHJlc2VydmVkSmF3Ym9uZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2bb7939b21/PreservedJawbone.png",
+    desc: "심연 콘텐츠",
+  },
 ];
 
 const PROFIT_GOALS = [
@@ -68,7 +116,9 @@ export default function FarmingForm({ onSubmit, loading }) {
               onClick={() => handleContentToggle(content.id)}
               title={content.desc}
             >
-              <span className="content-icon">{content.icon}</span>
+              <span className="content-icon">
+                <img src={content.iconUrl} alt={content.label} loading="lazy" />
+              </span>
               <span className="content-label">{content.label}</span>
             </button>
           ))}
@@ -127,4 +177,3 @@ export default function FarmingForm({ onSubmit, loading }) {
     </form>
   );
 }
-
