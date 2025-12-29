@@ -1,9 +1,49 @@
-# poe2-farming-recommender
+# PoE2 Farming Recommender
 
-## MVP 목표
-PoE2에서 사용자 조건에 맞는 파밍 루트를 추천한다.
+MVP 목표: PoE2에서 사용자 조건에 맞는 파밍 루트를 추천한다.
+
+## 실행 방법 (How to Run)
+
+### 한 번에 실행하기 (Recommended)
+Cursor(VS Code) 상단 메뉴에서 `Terminal` -> `Run Task` -> `Run Full Project (Backend + Frontend)`를 선택하거나, 터미널에서 아래 명령어를 실행하세요:
+```bash
+./start-dev.sh
+```
+
+### 개별 실행하기
+#### 1. 백엔드 설정 (Django)
+```bash
+cd backend
+# 가상환경 생성 및 활성화 (선택 사항)
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# 의존성 설치
+pip install -r requirements.txt
+
+# 데이터베이스 마이그레이션
+python manage.py migrate
+
+# 서버 실행
+python manage.py runserver
+```
+
+### 2. 프론트엔드 설정 (Vite + React)
+```bash
+cd frontend
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+```
+
+## 환경 변수 (.env)
+- **Backend (`backend/.env`)**: `SECRET_KEY`, `DEBUG`, `ALLOWED_HOSTS` 설정
+- **Frontend (`frontend/.env`)**: `VITE_API_URL` (백엔드 API 주소) 설정
 
 ## 추천 입력 데이터
+...
 - 캐릭터 레벨
 - 빌드 유형
 - 선호 난이도
