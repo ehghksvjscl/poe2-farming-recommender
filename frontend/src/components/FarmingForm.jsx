@@ -1,17 +1,6 @@
 import { useState } from "react";
 import "./FarmingForm.css";
 
-const CONTENT_TYPES = [
-  { id: "mapping", label: "맵핑", icon: "🗺️", desc: "경로석 파밍" },
-  { id: "bossing", label: "보스", icon: "👹", desc: "보스 킬링" },
-  { id: "expedition", label: "탐험", icon: "🧭", desc: "탐험 콘텐츠" },
-  { id: "ritual", label: "의식", icon: "🕯️", desc: "의식 제단" },
-  { id: "breach", label: "균열", icon: "💜", desc: "균열 파밍" },
-  { id: "delirium", label: "환영", icon: "🌀", desc: "환영 콘텐츠" },
-  { id: "heist", label: "강탈", icon: "🔓", desc: "강탈 계약서" },
-  { id: "abyss", label: "심연", icon: "🕳️", desc: "심연 콘텐츠" },
-];
-
 const PROFIT_GOALS = [
   { value: "low", label: "💵 낮음", desc: "1-3 Divine/시간" },
   { value: "medium", label: "💰 보통", desc: "3-7 Divine/시간" },
@@ -26,7 +15,12 @@ const INVESTMENT_LEVELS = [
   { value: "high", label: "대자본", desc: "50+ Divine" },
 ];
 
-export default function FarmingForm({ onSubmit, loading }) {
+export default function FarmingForm({
+  onSubmit,
+  loading,
+  contentTypes = [],
+  contentError = null,
+}) {
   const [formData, setFormData] = useState({
     preferredContent: [],
     profitGoal: "medium",
@@ -58,20 +52,28 @@ export default function FarmingForm({ onSubmit, loading }) {
         <h3 className="form-section-title">선호 콘텐츠</h3>
         <p className="form-section-desc">파밍하고 싶은 콘텐츠를 선택하세요 (복수 선택 가능)</p>
         <div className="content-toggles">
-          {CONTENT_TYPES.map((content) => (
+          {contentTypes.map((content) => (
             <button
-              key={content.id}
+              key={content.key}
               type="button"
               className={`content-toggle ${
-                formData.preferredContent.includes(content.id) ? "active" : ""
+                formData.preferredContent.includes(content.key) ? "active" : ""
               }`}
-              onClick={() => handleContentToggle(content.id)}
-              title={content.desc}
+              onClick={() => handleContentToggle(content.key)}
+              title={content.description}
             >
-              <span className="content-icon">{content.icon}</span>
+              <span className="content-icon">
+                <img src={content.icon_url} alt={content.label} loading="lazy" />
+              </span>
               <span className="content-label">{content.label}</span>
             </button>
           ))}
+          {contentError && (
+            <div className="content-empty">콘텐츠 정보를 불러오지 못했습니다.</div>
+          )}
+          {!contentError && contentTypes.length === 0 && (
+            <div className="content-empty">콘텐츠 정보를 불러오는 중...</div>
+          )}
         </div>
       </div>
 
@@ -127,4 +129,3 @@ export default function FarmingForm({ onSubmit, loading }) {
     </form>
   );
 }
-

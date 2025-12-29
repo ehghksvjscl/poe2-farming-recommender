@@ -11,3 +11,11 @@ class RecommendationSerializer(serializers.Serializer):
     strategy = serializers.CharField(required=False, allow_null=True)
     requirements = serializers.CharField(required=False, allow_null=True)
     tips = serializers.CharField(required=False, allow_null=True)
+
+
+class ContentPreferenceSerializer(serializers.Serializer):
+    key = serializers.CharField()
+    label = serializers.CharField()
+    description = serializers.CharField()
+    icon_url = serializers.URLField()
+    sort_order = serializers.IntegerField()

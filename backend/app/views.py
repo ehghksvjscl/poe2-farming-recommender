@@ -1,8 +1,9 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from app.models import ContentPreference
 from app.recommend import RecommendationInput, build_recommendations
-from app.serializers import RecommendationSerializer
+from app.serializers import ContentPreferenceSerializer, RecommendationSerializer
 
 
 class RecommendationAPIView(APIView):
@@ -19,4 +20,11 @@ class RecommendationAPIView(APIView):
         )
         recommendations = build_recommendations(payload)
         serializer = RecommendationSerializer(recommendations, many=True)
+        return Response({"results": serializer.data})
+
+
+class ContentPreferenceAPIView(APIView):
+    def get(self, request):
+        preferences = ContentPreference.objects.all()
+        serializer = ContentPreferenceSerializer(preferences, many=True)
         return Response({"results": serializer.data})
