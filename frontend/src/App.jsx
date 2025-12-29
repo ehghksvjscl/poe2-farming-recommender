@@ -30,13 +30,9 @@ export default function App() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          level: formData.level,
-          build_type: formData.buildType,
-          preferred_content: formData.preferredContent.join(","),
-          difficulty: formData.difficulty,
+          preferred_content: formData.preferredContent,
           profit_goal: formData.profitGoal,
-          play_time: formData.playTime,
-          party_size: formData.partySize,
+          investment: formData.investment,
           league: currentLeague,
         }),
       });
@@ -68,8 +64,8 @@ export default function App() {
           {/* Left: Form */}
           <aside className="form-sidebar">
             <div className="sidebar-header">
-              <h2>파밍 조건 설정</h2>
-              <p className="text-muted">조건에 맞는 최적의 파밍 루트를 추천해드립니다</p>
+              <h2>파밍 조건</h2>
+              <p className="text-muted">원하는 콘텐츠와 수익 목표를 선택하세요</p>
             </div>
             <FarmingForm onSubmit={handleSubmit} loading={loading} />
           </aside>

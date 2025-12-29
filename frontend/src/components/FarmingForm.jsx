@@ -1,37 +1,36 @@
 import { useState } from "react";
 import "./FarmingForm.css";
 
-const BUILD_TYPES = [
-  "콜드 DOT", "화염 DOT", "번개 빌드", "물리 빌드",
-  "미니언", "토템", "트랩/마인", "활 빌드", "근접 빌드"
-];
-
 const CONTENT_TYPES = [
-  { id: "mapping", label: "맵핑", icon: "🗺️" },
-  { id: "bossing", label: "보스", icon: "👹" },
-  { id: "delve", label: "델브", icon: "⛏️" },
-  { id: "expedition", label: "탐험", icon: "🧭" },
-  { id: "ritual", label: "의식", icon: "🕯️" },
-  { id: "breach", label: "균열", icon: "💜" },
-  { id: "delirium", label: "환영", icon: "🌀" },
+  { id: "mapping", label: "맵핑", icon: "🗺️", desc: "경로석 파밍" },
+  { id: "bossing", label: "보스", icon: "👹", desc: "보스 킬링" },
+  { id: "expedition", label: "탐험", icon: "🧭", desc: "탐험 콘텐츠" },
+  { id: "ritual", label: "의식", icon: "🕯️", desc: "의식 제단" },
+  { id: "breach", label: "균열", icon: "💜", desc: "균열 파밍" },
+  { id: "delirium", label: "환영", icon: "🌀", desc: "환영 콘텐츠" },
+  { id: "heist", label: "강탈", icon: "🔓", desc: "강탈 계약서" },
+  { id: "abyss", label: "심연", icon: "🕳️", desc: "심연 콘텐츠" },
 ];
 
-const DIFFICULTY_LEVELS = [
-  { value: "easy", label: "쉬움" },
-  { value: "medium", label: "보통" },
-  { value: "hard", label: "어려움" },
-  { value: "endgame", label: "엔드게임" },
+const PROFIT_GOALS = [
+  { value: "low", label: "💵 낮음", desc: "1-3 Divine/시간" },
+  { value: "medium", label: "💰 보통", desc: "3-7 Divine/시간" },
+  { value: "high", label: "💎 높음", desc: "7-15 Divine/시간" },
+  { value: "extreme", label: "🏆 최고", desc: "15+ Divine/시간" },
+];
+
+const INVESTMENT_LEVELS = [
+  { value: "zero", label: "무자본", desc: "초기 투자 없음" },
+  { value: "low", label: "소자본", desc: "1-10 Divine" },
+  { value: "medium", label: "중자본", desc: "10-50 Divine" },
+  { value: "high", label: "대자본", desc: "50+ Divine" },
 ];
 
 export default function FarmingForm({ onSubmit, loading }) {
   const [formData, setFormData] = useState({
-    level: 85,
-    buildType: "",
     preferredContent: [],
-    difficulty: "medium",
-    profitGoal: "",
-    playTime: "",
-    partySize: 1,
+    profitGoal: "medium",
+    investment: "low",
   });
 
   const handleChange = (e) => {
@@ -56,58 +55,8 @@ export default function FarmingForm({ onSubmit, loading }) {
   return (
     <form className="farming-form" onSubmit={handleSubmit}>
       <div className="form-section">
-        <h3 className="form-section-title">캐릭터 정보</h3>
-        
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="level">캐릭터 레벨</label>
-            <input
-              id="level"
-              name="level"
-              type="number"
-              min="1"
-              max="100"
-              value={formData.level}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="buildType">빌드 유형</label>
-            <select
-              id="buildType"
-              name="buildType"
-              value={formData.buildType}
-              onChange={handleChange}
-            >
-              <option value="">선택하세요</option>
-              {BUILD_TYPES.map((build) => (
-                <option key={build} value={build}>{build}</option>
-              ))}
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="partySize">파티 인원</label>
-            <select
-              id="partySize"
-              name="partySize"
-              value={formData.partySize}
-              onChange={handleChange}
-            >
-              <option value={1}>솔로</option>
-              <option value={2}>2인</option>
-              <option value={3}>3인</option>
-              <option value={4}>4인</option>
-              <option value={5}>5인</option>
-              <option value={6}>6인</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div className="form-section">
         <h3 className="form-section-title">선호 콘텐츠</h3>
+        <p className="form-section-desc">파밍하고 싶은 콘텐츠를 선택하세요 (복수 선택 가능)</p>
         <div className="content-toggles">
           {CONTENT_TYPES.map((content) => (
             <button
@@ -117,6 +66,7 @@ export default function FarmingForm({ onSubmit, loading }) {
                 formData.preferredContent.includes(content.id) ? "active" : ""
               }`}
               onClick={() => handleContentToggle(content.id)}
+              title={content.desc}
             >
               <span className="content-icon">{content.icon}</span>
               <span className="content-label">{content.label}</span>
@@ -126,49 +76,46 @@ export default function FarmingForm({ onSubmit, loading }) {
       </div>
 
       <div className="form-section">
-        <h3 className="form-section-title">목표 설정</h3>
-        
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="difficulty">선호 난이도</label>
-            <select
-              id="difficulty"
-              name="difficulty"
-              value={formData.difficulty}
-              onChange={handleChange}
+        <h3 className="form-section-title">수익 목표</h3>
+        <div className="option-cards">
+          {PROFIT_GOALS.map((goal) => (
+            <label
+              key={goal.value}
+              className={`option-card ${formData.profitGoal === goal.value ? "active" : ""}`}
             >
-              {DIFFICULTY_LEVELS.map((diff) => (
-                <option key={diff.value} value={diff.value}>{diff.label}</option>
-              ))}
-            </select>
-          </div>
+              <input
+                type="radio"
+                name="profitGoal"
+                value={goal.value}
+                checked={formData.profitGoal === goal.value}
+                onChange={handleChange}
+              />
+              <span className="option-label">{goal.label}</span>
+              <span className="option-desc">{goal.desc}</span>
+            </label>
+          ))}
+        </div>
+      </div>
 
-          <div className="form-group">
-            <label htmlFor="profitGoal">시간당 수익 목표 (Divine)</label>
-            <input
-              id="profitGoal"
-              name="profitGoal"
-              type="number"
-              min="0"
-              step="0.1"
-              placeholder="예: 5"
-              value={formData.profitGoal}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="playTime">플레이 가능 시간 (분)</label>
-            <input
-              id="playTime"
-              name="playTime"
-              type="number"
-              min="0"
-              placeholder="예: 60"
-              value={formData.playTime}
-              onChange={handleChange}
-            />
-          </div>
+      <div className="form-section">
+        <h3 className="form-section-title">초기 투자 자본</h3>
+        <div className="option-cards">
+          {INVESTMENT_LEVELS.map((level) => (
+            <label
+              key={level.value}
+              className={`option-card ${formData.investment === level.value ? "active" : ""}`}
+            >
+              <input
+                type="radio"
+                name="investment"
+                value={level.value}
+                checked={formData.investment === level.value}
+                onChange={handleChange}
+              />
+              <span className="option-label">{level.label}</span>
+              <span className="option-desc">{level.desc}</span>
+            </label>
+          ))}
         </div>
       </div>
 

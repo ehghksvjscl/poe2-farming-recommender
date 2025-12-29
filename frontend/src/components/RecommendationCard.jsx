@@ -1,17 +1,17 @@
 import "./RecommendationCard.css";
 
-const DIFFICULTY_COLORS = {
-  easy: "green",
-  medium: "blue",
-  hard: "gold",
-  endgame: "red",
+const INVESTMENT_COLORS = {
+  zero: "green",
+  low: "blue",
+  medium: "gold",
+  high: "red",
 };
 
-const DIFFICULTY_LABELS = {
-  easy: "쉬움",
-  medium: "보통",
-  hard: "어려움",
-  endgame: "엔드게임",
+const INVESTMENT_LABELS = {
+  zero: "무자본",
+  low: "소자본",
+  medium: "중자본",
+  high: "대자본",
 };
 
 export default function RecommendationCard({ recommendation, rank }) {
@@ -20,11 +20,11 @@ export default function RecommendationCard({ recommendation, rank }) {
     league,
     avg_profit_per_hour,
     drop_focus,
-    allowed_builds,
     reason,
-    difficulty = "medium",
-    exp_per_hour,
+    investment = "low",
     requirements,
+    strategy,
+    tips,
   } = recommendation;
 
   return (
@@ -35,8 +35,8 @@ export default function RecommendationCard({ recommendation, rank }) {
           <h3 className="card-title">{zone}</h3>
           <span className="card-league">{league}</span>
         </div>
-        <div className={`card-difficulty badge ${DIFFICULTY_COLORS[difficulty]}`}>
-          {DIFFICULTY_LABELS[difficulty]}
+        <div className={`card-investment badge ${INVESTMENT_COLORS[investment]}`}>
+          {INVESTMENT_LABELS[investment]}
         </div>
       </div>
 
@@ -48,16 +48,6 @@ export default function RecommendationCard({ recommendation, rank }) {
             <span className="stat-label">시간당 수익</span>
           </div>
         </div>
-        
-        {exp_per_hour && (
-          <div className="stat">
-            <span className="stat-icon">⭐</span>
-            <div className="stat-content">
-              <span className="stat-value">{exp_per_hour}</span>
-              <span className="stat-label">시간당 경험치</span>
-            </div>
-          </div>
-        )}
 
         <div className="stat">
           <span className="stat-icon">🎁</span>
@@ -73,26 +63,29 @@ export default function RecommendationCard({ recommendation, rank }) {
         <p>{reason}</p>
       </div>
 
-      {allowed_builds && allowed_builds.length > 0 && (
-        <div className="card-builds">
-          <span className="builds-label">적합 빌드:</span>
-          <div className="builds-tags">
-            {allowed_builds.map((build) => (
-              <span key={build} className="build-tag">{build}</span>
-            ))}
-          </div>
+      {strategy && (
+        <div className="card-strategy">
+          <h4>🎮 파밍 전략</h4>
+          <p>{strategy}</p>
         </div>
       )}
 
       {requirements && (
         <div className="card-requirements">
-          <h4>준비물</h4>
+          <h4>📦 필요 준비물</h4>
           <p>{requirements}</p>
         </div>
       )}
 
+      {tips && (
+        <div className="card-tips">
+          <h4>✨ 팁</h4>
+          <p>{tips}</p>
+        </div>
+      )}
+
       <div className="card-actions">
-        <button className="secondary">상세 보기</button>
+        <button className="secondary">상세 가이드</button>
         <button className="secondary">북마크</button>
       </div>
     </article>
