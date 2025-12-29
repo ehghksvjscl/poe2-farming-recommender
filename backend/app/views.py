@@ -1,9 +1,15 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from app.models import ContentPreference, MarketItem
+from app.models import ContentPreference, FarmingMethod, MarketItem
 from app.recommend import RecommendationInput, build_recommendations
-from app.serializers import ContentPreferenceSerializer, MarketItemSerializer, RecommendationSerializer
+from app.serializers import (
+    ContentPreferenceSerializer,
+    FarmingMethodListSerializer,
+    FarmingMethodDetailSerializer,
+    MarketItemSerializer,
+    RecommendationSerializer,
+)
 
 
 class RecommendationAPIView(APIView):
@@ -107,3 +113,62 @@ class MarketItemListAPIView(APIView):
             "categories": list(set(categories)),
             "items": items_data,
         })
+
+
+class FarmingMethodListAPIView(APIView):
+    """파밍 방법 목록 API"""
+
+    def get(self, request):
+        category = request.query_params.get("category")
+        difficulty = request.query_params.get("difficulty")
+        league_specific = request.query_params.get("league_specific")
+
+        queryset = FarmingMethod.objects.filter(is_active=True)
+
+        if category:
+            queryset = queryset.filter(category=category)
+
+        if difficulty:
+            queryset = queryset.filter(difficulty=difficulty)
+
+        if league_specific is not None:
+            is_league_specific = league_specific.lower() in ("true", "1", "yes")
+            queryset = queryset.filter(is_league_specific=is_league_specific)
+
+        queryset = queryset.order_by("sort_order", "-estimated_profit_max")
+
+        serializer = FarmingMethodListSerializer(queryset, many=True)
+
+        # 카테고리별 통계
+        categories = list(
+            FarmingMethod.objects.filter(is_active=True)
+            .values_list("category", flat=True)
+            .distinct()
+        )
+
+        # 난이도별 통계
+        difficulties = list(
+            FarmingMethod.objects.filter(is_active=True)
+            .values_list("difficulty", flat=True)
+            .distinct()
+        )
+
+        return Response({
+            "count": queryset.count(),
+            "categories": categories,
+            "difficulties": difficulties,
+            "methods": serializer.data,
+        })
+
+
+class FarmingMethodDetailAPIView(APIView):
+    """파밍 방법 상세 API"""
+
+    def get(self, request, slug):
+        try:
+            method = FarmingMethod.objects.get(slug=slug, is_active=True)
+        except FarmingMethod.DoesNotExist:
+            return Response({"error": "파밍 방법을 찾을 수 없습니다."}, status=404)
+
+        serializer = FarmingMethodDetailSerializer(method)
+        return Response(serializer.data)
