@@ -1,5 +1,24 @@
 from rest_framework import serializers
 
+from app.models import MarketItem
+
+
+class MarketItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MarketItem
+        fields = [
+            "id",
+            "item_id",
+            "name",
+            "name_ko",
+            "type",
+            "category",
+            "icon_url",
+            "current_price",
+            "league",
+            "updated_at",
+        ]
+
 
 class RecommendationSerializer(serializers.Serializer):
     zone = serializers.CharField()
