@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 import Header from "./components/Header";
 import FarmingForm from "./components/FarmingForm";
@@ -15,8 +15,28 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
+  const [contentTypes, setContentTypes] = useState([]);
+  const [contentError, setContentError] = useState(null);
 
   const { leagues } = useLeagues();
+
+  useEffect(() => {
+    const fetchContentTypes = async () => {
+      try {
+        const response = await fetch(`${API_URL}/content-preferences/`);
+        if (!response.ok) {
+          throw new Error("콘텐츠 정보를 불러오지 못했습니다");
+        }
+        const data = await response.json();
+        setContentTypes(data.results || []);
+      } catch (err) {
+        setContentError(err.message);
+        setContentTypes([]);
+      }
+    };
+
+    fetchContentTypes();
+  }, [API_URL]);
 
   const handleSubmit = async (formData) => {
     setLoading(true);
@@ -67,7 +87,12 @@ export default function App() {
               <h2>파밍 조건</h2>
               <p className="text-muted">원하는 콘텐츠와 수익 목표를 선택하세요</p>
             </div>
-            <FarmingForm onSubmit={handleSubmit} loading={loading} />
+            <FarmingForm
+              onSubmit={handleSubmit}
+              loading={loading}
+              contentTypes={contentTypes}
+              contentError={contentError}
+            />
           </aside>
 
           {/* Right: Results */}

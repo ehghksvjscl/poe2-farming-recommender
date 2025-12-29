@@ -75,6 +75,12 @@
   font-weight: 500;
 }
 
+.content-empty {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  padding: var(--spacing-sm);
+}
+
 /* Option cards (radio buttons) */
 .option-cards {
   display: grid;
