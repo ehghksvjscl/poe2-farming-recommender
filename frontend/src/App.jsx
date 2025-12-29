@@ -9,7 +9,7 @@ const DEFAULT_LEAGUE = "Fate of the Vaal";
 
 export default function App() {
   const [currentLeague, setCurrentLeague] = useState(DEFAULT_LEAGUE);
-  const [activeTab, setActiveTab] = useState("market"); // "market" | "guide"
+  const [activeTab, setActiveTab] = useState("guide"); // "guide" | "market"
 
   const { leagues } = useLeagues();
 
@@ -25,18 +25,25 @@ export default function App() {
         {/* 탭 네비게이션 */}
         <nav className="tab-nav">
           <button
-            className={`tab-btn ${activeTab === "market" ? "active" : ""}`}
-            onClick={() => setActiveTab("market")}
-          >
-            💰 시장 시세
-          </button>
-          <button
             className={`tab-btn ${activeTab === "guide" ? "active" : ""}`}
             onClick={() => setActiveTab("guide")}
           >
             📜 파밍 가이드
           </button>
+          <button
+            className={`tab-btn ${activeTab === "market" ? "active" : ""}`}
+            onClick={() => setActiveTab("market")}
+          >
+            💰 시장 시세
+          </button>
         </nav>
+
+        {/* 파밍 가이드 탭 */}
+        {activeTab === "guide" && (
+          <div className="tab-content">
+            <FarmingGuide />
+          </div>
+        )}
 
         {/* 마켓 시세 탭 */}
         {activeTab === "market" && (
@@ -46,13 +53,6 @@ export default function App() {
               <p className="text-muted">poe2scout.com 기준 실시간 시세</p>
             </div>
             <MarketItemList />
-          </div>
-        )}
-
-        {/* 파밍 가이드 탭 */}
-        {activeTab === "guide" && (
-          <div className="tab-content">
-            <FarmingGuide />
           </div>
         )}
       </main>

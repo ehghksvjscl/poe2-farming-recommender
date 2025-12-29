@@ -3,75 +3,6 @@
   "updated_at": "2025-01-01",
   "methods": [
     {
-      "slug": "tablet-mapping",
-      "name": "Tablet Mapping",
-      "name_ko": "서판 맵핑",
-      "category": "mapping",
-      "difficulty": "intermediate",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUHJlY3Vyc29yVGFibGV0cy9QcmVjdXJzb3JUYWJsZXRHZW5lcmljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5658ce7f2d/PrecursorTabletGeneric.png",
-      "summary": "서판을 활용하여 몬스터 무리와 아이템 드랍을 극대화하는 핵심 파밍 방법",
-      "description": "서판(Tablet)은 바알의 운명 리그에서 가장 중요한 파밍 요소입니다. 적절한 서판 조합으로 맵의 몬스터 수와 아이템 드랍률을 크게 높일 수 있습니다.\n\n### 핵심 원리\n- 서판은 경로석에 장착하여 맵에 추가 효과 부여\n- 몬스터 무리 규모 증가 = 더 많은 드랍\n- 아이템 수량/희귀도 증가 = 고가 아이템 확률 상승",
-      "requirements": [
-        "T13+ 경로석 파밍 가능한 빌드",
-        "기본적인 서판 이해",
-        "초기 자본 5-10 Divine"
-      ],
-      "recommended_items": [
-        {
-          "name": "Season of the Hunt",
-          "name_ko": "사냥철",
-          "description": "희귀 몬스터 수 증가"
-        },
-        {
-          "name": "Precursor Tablet (Ritual)",
-          "name_ko": "의식 서판",
-          "description": "의식 컨텐츠 추가"
-        },
-        {
-          "name": "Precursor Tablet (Breach)",
-          "name_ko": "균열 서판",
-          "description": "균열 컨텐츠 추가"
-        },
-        {
-          "name": "Precursor Tablet (Expedition)",
-          "name_ko": "탐험 서판",
-          "description": "탐험 컨텐츠 추가"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "서판 구매",
-          "description": "거래소에서 핵심 서판 구매: 사냥철, 의식/균열/탐험 서판"
-        },
-        {
-          "step": 2,
-          "title": "경로석 준비",
-          "description": "T13+ 경로석에 알케미/바알 오브로 옵션 강화"
-        },
-        {
-          "step": 3,
-          "title": "서판 조합",
-          "description": "경로석에 서판 3-4개 장착. 추천 조합: 사냥철 + 의식 + 균열"
-        },
-        {
-          "step": 4,
-          "title": "맵 클리어",
-          "description": "빠르게 맵 클리어하며 모든 몬스터 처치. 보스 필수 처치"
-        }
-      ],
-      "tips": [
-        "지도 작업이 완료되지 않은 맵에서 더 높은 효율",
-        "서판은 재사용 가능하므로 초기 투자 후 지속 수익",
-        "희귀 몬스터 증가 서판이 디바인 드랍에 효과적"
-      ],
-      "estimated_profit_min": 15,
-      "estimated_profit_max": 30,
-      "investment_required": 8,
-      "is_league_specific": false,
-      "source_url": "https://vortexgaming.io/postdetail/557975"
-    },
-    {
       "slug": "ritual-farming",
       "name": "Ritual Farming",
       "name_ko": "의식 파밍",
@@ -173,13 +104,14 @@
       ],
       "tips": [
         "Shrieking/Deafening 등급 에센스가 고가",
-        "의식 파밍과 병행하면 효율 상승",
+        "의식 파밍과 병행하면 효율 상승 (6시간 25딥 실적)",
         "에센스 업그레이드로 가치 상승 가능"
       ],
-      "estimated_profit_min": 8,
-      "estimated_profit_max": 20,
-      "investment_required": 1,
-      "is_league_specific": false
+      "estimated_profit_min": 3,
+      "estimated_profit_max": 5,
+      "investment_required": 0,
+      "is_league_specific": false,
+      "source_url": "https://reims.tistory.com/1124"
     },
     {
       "slug": "divine-orb-farming",
@@ -305,58 +237,6 @@
       "source_url": "https://blacktrees.tistory.com/entry/Path-of-Exile-2-재조합기로-디바인-벌기"
     },
     {
-      "slug": "expedition-farming",
-      "name": "Expedition Farming",
-      "name_ko": "탐험 파밍",
-      "category": "mechanic",
-      "difficulty": "intermediate",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbi9FeHBlZGl0aW9uU3BsaW50ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4768efb2c6/ExpeditionSplinter.png",
-      "summary": "탐험 컨텐츠로 유물과 화폐를 획득하는 방법",
-      "description": "탐험(Expedition)은 폭발물로 땅을 파서 유물과 몬스터를 발굴하는 컨텐츠입니다. 재조합기 유물, 리롤 화폐 등 가치 있는 아이템을 획득할 수 있어 초반 자본 마련에 좋습니다.",
-      "requirements": [
-        "탐험 아틀라스 노드 활성화",
-        "AoE가 좋은 빌드 추천"
-      ],
-      "recommended_items": [
-        {
-          "name": "탐험 서판",
-          "name_ko": "탐험 서판",
-          "description": "맵에 탐험 컨텐츠 등장"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "아틀라스 설정",
-          "description": "탐험 관련 패시브 노드 활성화"
-        },
-        {
-          "step": 2,
-          "title": "탐험 진행",
-          "description": "맵에서 탐험 발견시 폭발물 배치하여 최대한 많은 유물 발굴"
-        },
-        {
-          "step": 3,
-          "title": "유물 수집",
-          "description": "재조합기, 갬블러 등 가치 있는 유물 우선 수집"
-        },
-        {
-          "step": 4,
-          "title": "NPC 상점 이용",
-          "description": "탐험 NPC에서 화폐로 아이템 구매/리롤"
-        }
-      ],
-      "tips": [
-        "재조합기 유물은 제작에 필수 - 직접 사용 또는 판매",
-        "탐험 화폐는 NPC 갬블링에 사용 가능",
-        "로직릭스 유물로 아이템 가격 리롤 가능"
-      ],
-      "estimated_profit_min": 8,
-      "estimated_profit_max": 25,
-      "investment_required": 2,
-      "is_league_specific": false
-    },
-    {
       "slug": "boss-farming",
       "name": "Endgame Boss Farming",
       "name_ko": "엔드게임 보스 파밍",
@@ -462,63 +342,6 @@
       "investment_required": 0,
       "is_league_specific": true,
       "source_url": "https://mkbn.mk.co.kr/news/it/11490767"
-    },
-    {
-      "slug": "breach-farming",
-      "name": "Breach Farming",
-      "name_ko": "균열 파밍",
-      "category": "mechanic",
-      "difficulty": "intermediate",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lU3BsaW50ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4abb17ea8e/BreachstoneSplinter.png",
-      "summary": "균열을 열어 파편과 균열석을 획득하는 파밍 방법",
-      "description": "균열(Breach)은 손을 클릭하면 열리는 포탈로, 대량의 몬스터가 쏟아집니다. 균열 파편을 모아 균열석을 만들고, 균열 영역에 진입하여 보스를 처치하면 고가의 아이템을 얻을 수 있습니다.",
-      "requirements": [
-        "빠른 클리어 속도의 빌드",
-        "균열 아틀라스 노드"
-      ],
-      "recommended_items": [
-        {
-          "name": "균열 서판",
-          "name_ko": "균열 서판",
-          "description": "맵에 균열 추가 등장"
-        },
-        {
-          "name": "균열석",
-          "name_ko": "균열석",
-          "description": "균열 영역 진입용"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "아틀라스 설정",
-          "description": "균열 관련 패시브 노드 활성화"
-        },
-        {
-          "step": 2,
-          "title": "균열 열기",
-          "description": "맵에서 균열 손 발견시 클릭하여 활성화"
-        },
-        {
-          "step": 3,
-          "title": "파편 수집",
-          "description": "균열 몬스터 처치하며 파편 수집"
-        },
-        {
-          "step": 4,
-          "title": "균열석 제작/진입",
-          "description": "파편 100개로 균열석 제작, 균열 영역 진입하여 보스 처치"
-        }
-      ],
-      "tips": [
-        "균열은 시간 제한이 있으므로 빠른 클리어 필수",
-        "차율라, 조프 등 보스 드랍이 고가",
-        "균열석은 직접 사용 또는 판매 가능"
-      ],
-      "estimated_profit_min": 12,
-      "estimated_profit_max": 35,
-      "investment_required": 3,
-      "is_league_specific": false
     },
     {
       "slug": "abyss-farming",
@@ -770,59 +593,6 @@
       "investment_required": 0,
       "is_league_specific": false,
       "source_url": "https://vortexgaming.io/postdetail/557975"
-    },
-    {
-      "slug": "item-filter-optimization",
-      "name": "Item Filter Optimization",
-      "name_ko": "아이템 필터 최적화",
-      "category": "trading",
-      "difficulty": "beginner",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
-      "summary": "커스텀 아이템 필터를 활용하여 파밍 효율을 극대화하는 방법",
-      "description": "아이템 필터를 최적화하면 가치 없는 아이템을 자동으로 숨기고, 고가 아이템만 강조 표시하여 파밍 효율이 크게 향상됩니다.\n\n### 필터 최적화 효과\n- 불필요한 아이템 줍기 시간 절약\n- 가치 있는 아이템 놓치지 않음\n- 창고 정리 시간 단축\n\n### 추천 필터 사이트\n- FilterBlade (filterblade.xyz)\n- NeverSink's Filter",
-      "requirements": [
-        "필터 제작 사이트 접근",
-        "시세 이해"
-      ],
-      "recommended_items": [
-        {
-          "name": "FilterBlade",
-          "name_ko": "필터블레이드",
-          "description": "필터 커스터마이징 사이트"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "필터 사이트 접속",
-          "description": "FilterBlade 또는 유사 사이트 접속"
-        },
-        {
-          "step": 2,
-          "title": "시세 확인",
-          "description": "poe2scout 등에서 현재 시세 확인"
-        },
-        {
-          "step": 3,
-          "title": "필터 커스터마이징",
-          "description": "고가 아이템 강조, 저가 아이템 숨김 설정"
-        },
-        {
-          "step": 4,
-          "title": "필터 적용",
-          "description": "게임에 필터 적용 후 파밍"
-        }
-      ],
-      "tips": [
-        "시세 변동에 따라 주기적으로 필터 업데이트",
-        "처음엔 느슨하게 시작하고 점점 엄격하게",
-        "유명 스트리머 필터 참고 추천"
-      ],
-      "estimated_profit_min": 0,
-      "estimated_profit_max": 0,
-      "investment_required": 0,
-      "is_league_specific": false,
-      "source_url": "https://vortexgaming.io/postdetail/546316"
     },
     {
       "slug": "low-budget-mapping",
