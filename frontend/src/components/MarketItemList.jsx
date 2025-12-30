@@ -31,7 +31,8 @@ function formatPrice(price) {
   const num = parseFloat(price);
   
   if (num >= 10000) {
-    return (num / 1000).toFixed(1) + "k";
+    const k = num / 1000;
+    return (k % 1 === 0 ? k.toFixed(0) : k.toFixed(1)) + "k";
   }
   if (num >= 1000) {
     return num.toLocaleString("ko-KR", { maximumFractionDigits: 0 });
@@ -39,10 +40,16 @@ function formatPrice(price) {
   if (num >= 100) {
     return num.toFixed(0);
   }
-  if (num >= 1) {
-    return num.toFixed(1);
+  // 소수점 이하가 0이면 정수로 표시
+  if (num % 1 === 0) {
+    return num.toFixed(0);
   }
-  return num.toFixed(2);
+  if (num >= 1) {
+    // 소수점 첫째자리가 0이면 정수로
+    return num.toFixed(1).replace(/\.0$/, '');
+  }
+  // 0.xx 값은 불필요한 0 제거
+  return num.toFixed(2).replace(/\.?0+$/, '');
 }
 
 export default function MarketItemList() {

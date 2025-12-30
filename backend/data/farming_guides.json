@@ -3,345 +3,158 @@
   "updated_at": "2025-01-01",
   "methods": [
     {
-      "slug": "ritual-farming",
-      "name": "Ritual Farming",
-      "name_ko": "의식 파밍",
-      "category": "mechanic",
-      "difficulty": "beginner",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUml0dWFsL05ld1JpdHVhbFNwbGludGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/e88f32bf38/NewRitualSplinter.png",
-      "summary": "의식 컨텐츠를 활용한 안정적인 저자본 파밍 방법",
-      "description": "의식(Ritual)은 맵에서 활성화되는 추가 컨텐츠로, 몬스터 무리를 처치하고 보상을 선택할 수 있습니다. 초보자도 쉽게 접근 가능하며 안정적인 수익을 제공합니다.\n\n### 의식의 장점\n- 추가 몬스터 = 더 많은 경험치와 드랍\n- 선택형 보상으로 필요한 아이템 획득\n- 아틀라스 노드로 효율 극대화 가능",
-      "requirements": [
-        "맵 클리어 가능한 빌드",
-        "아틀라스에서 의식 노드 활성화"
-      ],
-      "recommended_items": [
-        {
-          "name": "의식 서판",
-          "name_ko": "의식 서판",
-          "description": "맵에 의식 추가 등장"
-        },
-        {
-          "name": "방사능 노출 서판",
-          "name_ko": "방사능 노출 서판",
-          "description": "몬스터 무리 규모 증가"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "아틀라스 설정",
-          "description": "아틀라스 패시브 트리에서 의식 관련 노드 활성화"
-        },
-        {
-          "step": 2,
-          "title": "의식 서판 장착",
-          "description": "경로석에 의식 서판 장착"
-        },
-        {
-          "step": 3,
-          "title": "의식 진행",
-          "description": "맵에서 의식 제단 찾아서 활성화, 모든 웨이브 클리어"
-        },
-        {
-          "step": 4,
-          "title": "보상 선택",
-          "description": "가치 있는 화폐나 아이템 우선 선택. 디바인/엑잘 우선"
-        }
-      ],
-      "tips": [
-        "의식 보상은 다음 의식으로 이월 가능 - 높은 가치 보상 노리기",
-        "방사능 서판과 조합하면 몬스터 수 대폭 증가",
-        "하루 25 디바인 이상 수익 가능 (유저 리포트)"
-      ],
-      "estimated_profit_min": 10,
-      "estimated_profit_max": 25,
-      "investment_required": 2,
-      "is_league_specific": false,
-      "source_url": "https://reims.tistory.com/1124"
-    },
-    {
       "slug": "essence-farming",
       "name": "Essence Farming",
       "name_ko": "에센스 파밍",
       "category": "mechanic",
       "difficulty": "beginner",
       "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXNzZW5jZS9Db3JydXB0ZWRFc3NlbmNlSHlzdGVyaWEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/91e94f1413/CorruptedEssenceHysteria.png",
-      "summary": "에센스 몬스터를 사냥하여 제작 재료와 화폐를 획득하는 방법",
-      "description": "에센스는 아이템 제작에 사용되는 중요한 재료입니다. 맵에서 에센스에 갇힌 몬스터를 처치하면 에센스를 획득할 수 있으며, 높은 등급의 에센스는 고가에 거래됩니다.",
+      "summary": "선도자 탑 밀집 지역에서 감독관 서판과 에센스 경로석을 활용한 고효율 파밍",
+      "description": "POE2 에센스 파밍은 '지역에 에센스 한 개 추가 등장' 경로석과 '감독관 서판'을 조합하여 효율을 극대화합니다. 선도자 탑이 5개 이상 밀집된 지역에서 진행하면 한 번에 많은 에센스 기둥을 만날 수 있습니다.\n\n### 핵심 메카닉\n- **경로석**: '지역에 에센스 한 개 추가 등장' 옵션 필수\n- **감독관 서판**: '지도 보스가 있는 지역에 에센스 한 개 추가 등장' 접미사\n- **선도자 탑**: 최소 5개 이상 밀집 지역에서 진행\n\n### 장점\n- 리그 초반 낮은 등급 경로석으로도 파밍 가능\n- 뉴비/초보자에게 적합한 파밍 방법\n- 기존 파밍이 지루할 때 전환하기 좋음",
       "requirements": [
         "맵 클리어 가능한 빌드",
-        "에센스 관련 아틀라스 노드"
+        "'지역에 에센스 추가 등장' 경로석",
+        "감독관 서판 (에센스 접미사)",
+        "선도자 탑 5개 이상 밀집 지역"
       ],
       "recommended_items": [
         {
-          "name": "에센스 서판",
-          "name_ko": "에센스 서판",
-          "description": "에센스 몬스터 추가 등장"
+          "name": "에센스 추가 등장 경로석",
+          "name_ko": "에센스 추가 등장 경로석",
+          "description": "'지역에 에센스 한 개 추가 등장' 옵션이 붙은 경로석. 자주 안 나오므로 따로 모아둘 것"
+        },
+        {
+          "name": "감독관 서판",
+          "name_ko": "감독관 서판",
+          "description": "접미사에 '지도 보스가 있는 지역에 에센스 한 개 추가 등장' 옵션 필요. 없으면 재련 작업대로 제작"
         }
       ],
       "steps": [
         {
           "step": 1,
-          "title": "아틀라스 설정",
-          "description": "에센스 관련 패시브 노드 활성화"
+          "title": "경로석 및 서판 준비",
+          "description": "'지역에 에센스 추가 등장' 경로석과 '감독관 서판(에센스 접미사)'을 미리 모아둔다. 감독관 서판이 없으면 재련 작업대로 제작 가능"
         },
         {
           "step": 2,
-          "title": "에센스 몬스터 처치",
-          "description": "맵에서 에센스에 갇힌 몬스터 찾아서 처치"
+          "title": "아틀라스 노드 설정",
+          "description": "12시 방향 '공명하는 격자' 노드 할당 (에센스 기둥에서 최대 3개 에센스 확률 증가). '힘의 잔' 노드로 선도자 서판 효과 2배. '결정 형성' + 작은 에센스 노드들도 할당"
         },
         {
           "step": 3,
-          "title": "에센스 업그레이드",
-          "description": "낮은 등급 에센스 3개를 상위 등급으로 업그레이드"
+          "title": "선도자 탑 밀집 지역 찾기",
+          "description": "성채 1을 진행하면서 선도자 탑이 5개 이상 밀집된 지역을 찾는다. 해당 지역에서 최소 동선으로 탑을 완료"
         },
         {
           "step": 4,
-          "title": "판매 또는 사용",
-          "description": "고급 에센스는 거래소 판매, 제작용으로 사용"
+          "title": "세팅 변경 후 몰아서 진행",
+          "description": "감독관 서판과 아틀라스 노드를 에센스 파밍용으로 변경 후 해당 지역에서 몰아서 파밍. 고유 보스가 없는 맵에서는 에센스가 등장하지 않으니 주의!"
+        },
+        {
+          "step": 5,
+          "title": "에센스 재련 및 판매",
+          "description": "낮은 가치 에센스는 재련 작업대에서 3개를 합쳐 무작위 에센스로 변환 (상위 에센스 될 가능성 있음). 고급 에센스는 거래소 판매"
         }
       ],
       "tips": [
-        "Shrieking/Deafening 등급 에센스가 고가",
-        "의식 파밍과 병행하면 효율 상승 (6시간 25딥 실적)",
-        "에센스 업그레이드로 가치 상승 가능"
+        "⚠️ 고유 보스가 없는 맵에서는 에센스가 등장하지 않음!",
+        "'공명하는 격자' 노드로 에센스 기둥당 최대 3개 에센스 획득 가능",
+        "'힘의 잔' 노드 발동시 선도자 서판 효과 2배 → 엄청난 에센스 기둥 등장",
+        "낮은 등급 경로석으로도 가능 (상위 에센스 확률은 감소)",
+        "에센스 추가 등장 경로석은 자주 안 나오므로 평소에 모아둘 것",
+        "재련 작업대: 에센스 3개 → 무작위 에센스 (상위 변환 가능성 있음)",
+        "상위 에센스 3개 합쳐도 반드시 상위가 나오진 않으니 주의"
       ],
       "estimated_profit_min": 3,
       "estimated_profit_max": 5,
       "investment_required": 0,
       "is_league_specific": false,
-      "source_url": "https://reims.tistory.com/1124"
-    },
-    {
-      "slug": "divine-orb-farming",
-      "name": "Divine Orb Farming",
-      "name_ko": "신성한 오브 파밍",
-      "category": "mapping",
-      "difficulty": "intermediate",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
-      "summary": "디바인 오브 드랍 확률을 최대화하는 MF(매직 파인드) 파밍",
-      "description": "신성한 오브(Divine Orb)는 POE2의 핵심 화폐입니다. 드랍 확률이 약 0.055%로 낮지만, 아이템 희귀도(MF)를 높이고 몬스터를 많이 처치하면 획득 확률을 높일 수 있습니다.\n\n### 드랍 확률\n- 기본 확률: ~0.055% (몬스터 1,900마리당 1개)\n- MF 100% 적용시: ~0.11%\n- 희귀 몬스터에서 더 높은 확률",
-      "requirements": [
-        "T16 맵 클리어 가능한 빌드",
-        "아이템 희귀도 100%+ 장비",
-        "빠른 맵 클리어 속도"
-      ],
-      "recommended_items": [
-        {
-          "name": "MF 장비",
-          "name_ko": "매직 파인드 장비",
-          "description": "아이템 희귀도 증가 옵션이 붙은 반지, 목걸이, 벨트"
-        },
-        {
-          "name": "Season of the Hunt",
-          "name_ko": "사냥철",
-          "description": "희귀 몬스터 추가 등장"
-        },
-        {
-          "name": "Precursor Tablet (Ritual)",
-          "name_ko": "의식 서판",
-          "description": "의식 보상으로 추가 드랍"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "MF 장비 준비",
-          "description": "아이템 희귀도 증가 장비로 총 100%+ 확보"
-        },
-        {
-          "step": 2,
-          "title": "경로석 최적화",
-          "description": "T16 경로석에 알케미/바알로 옵션 강화"
-        },
-        {
-          "step": 3,
-          "title": "서판 장착",
-          "description": "사냥철 + 의식 + 균열 조합"
-        },
-        {
-          "step": 4,
-          "title": "고속 맵핑",
-          "description": "T16 맵을 빠르게 클리어. 희귀 몬스터 우선 처치"
-        }
-      ],
-      "tips": [
-        "희귀 몬스터가 디바인 드랍 확률 더 높음",
-        "맵 클리어 속도가 핵심 - 시간당 몬스터 킬 수 극대화",
-        "파티 플레이시 아이템 수량 보너스 적용"
-      ],
-      "estimated_profit_min": 20,
-      "estimated_profit_max": 50,
-      "investment_required": 15,
-      "is_league_specific": false,
-      "source_url": "https://seototo.net/poe2-신성한-오브/"
-    },
-    {
-      "slug": "recombinator-crafting",
-      "name": "Recombinator Crafting",
-      "name_ko": "재조합기 제작",
-      "category": "crafting",
-      "difficulty": "advanced",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
-      "summary": "재조합기를 활용한 고급 아이템 제작 및 판매",
-      "description": "재조합기(Recombinator)는 두 아이템을 합쳐 새로운 아이템을 만드는 제작 도구입니다. 올바른 조합으로 고가의 아이템을 제작하여 큰 수익을 올릴 수 있습니다.\n\n### 인기 제작 아이템\n- 3저항 + 플랫 데미지 반지\n- 카오스 저항 + 스탯 반지\n- 고급 무기/방어구",
-      "requirements": [
-        "재조합기 유물 (탐험에서 획득)",
-        "제작 베이스 아이템",
-        "시장 가격 이해"
-      ],
-      "recommended_items": [
-        {
-          "name": "재조합기 유물",
-          "name_ko": "재조합기 유물",
-          "description": "탐험 컨텐츠에서 획득"
-        },
-        {
-          "name": "제작 베이스",
-          "name_ko": "제작 베이스",
-          "description": "좋은 옵션이 붙은 기본 아이템"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "유물 수집",
-          "description": "탐험 컨텐츠에서 재조합기 유물 수집"
-        },
-        {
-          "step": 2,
-          "title": "베이스 준비",
-          "description": "원하는 옵션이 붙은 두 아이템 준비"
-        },
-        {
-          "step": 3,
-          "title": "재조합 실행",
-          "description": "두 아이템을 재조합기에 넣고 실행"
-        },
-        {
-          "step": 4,
-          "title": "결과 판매",
-          "description": "좋은 결과물은 거래소에 고가 판매"
-        }
-      ],
-      "tips": [
-        "플랫 데미지 + 3저항 반지가 수요 높음",
-        "탐험 파밍과 병행하여 유물 확보",
-        "시장 가격 확인 후 수익성 있는 제작만 진행"
-      ],
-      "estimated_profit_min": 5,
-      "estimated_profit_max": 100,
-      "investment_required": 5,
-      "is_league_specific": false,
-      "source_url": "https://blacktrees.tistory.com/entry/Path-of-Exile-2-재조합기로-디바인-벌기"
-    },
-    {
-      "slug": "boss-farming",
-      "name": "Endgame Boss Farming",
-      "name_ko": "엔드게임 보스 파밍",
-      "category": "boss",
-      "difficulty": "expert",
-      "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUnVuZXMvTmV3UnVuZTEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ea21196cfb/NewRune1.png",
-      "summary": "강력한 지도 보스를 처치하여 유니크 아이템 획득",
-      "description": "엔드게임 보스는 고유한 유니크 아이템을 드랍합니다. 보스별 진입 조건과 공략법을 숙지하면 고가의 아이템을 획득할 수 있습니다.\n\n### 주요 보스\n- 안개 속 대저택\n- 불타는 거석\n- 태풍의 눈",
-      "requirements": [
-        "보스 DPS 체크 가능한 빌드",
-        "보스 메카닉 이해",
-        "진입 조각/아이템"
-      ],
-      "recommended_items": [
-        {
-          "name": "드라이어흐트 헨지석",
-          "name_ko": "드라이어흐트 헨지석",
-          "description": "안개 속 대저택 진입용"
-        },
-        {
-          "name": "위기 조각",
-          "name_ko": "위기 조각",
-          "description": "불타는 거석 진입용"
-        }
-      ],
-      "steps": [
-        {
-          "step": 1,
-          "title": "진입 아이템 수집",
-          "description": "각 보스별 필요한 진입 조각/아이템 수집"
-        },
-        {
-          "step": 2,
-          "title": "보스 메카닉 학습",
-          "description": "유튜브 등에서 보스 패턴 학습"
-        },
-        {
-          "step": 3,
-          "title": "보스 도전",
-          "description": "진입 후 보스 처치"
-        },
-        {
-          "step": 4,
-          "title": "드랍 확인",
-          "description": "유니크 아이템 드랍 확인 및 판매"
-        }
-      ],
-      "tips": [
-        "안개 속 대저택: 드라이어흐트 헨지석 활성화로 진입",
-        "불타는 거석: 고대/빛바랜/풍화된 위기 조각 필요",
-        "태풍의 눈: 카루이 표식 제거로 진입"
-      ],
-      "estimated_profit_min": 10,
-      "estimated_profit_max": 200,
-      "investment_required": 20,
-      "is_league_specific": false,
-      "source_url": "https://seototo.net/poe2-강력한-지도-보스-진입-방법/"
+      "creator_name": "kuro (조이삼촌)",
+      "creator_url": "https://www.youtube.com/watch?v=3jSQK7CRJT8",
+      "source_url": "https://www.youtube.com/watch?v=3jSQK7CRJT8"
     },
     {
       "slug": "vaal-temple",
       "name": "Vaal Temple Farming",
       "name_ko": "바알 사원 파밍",
       "category": "league",
-      "difficulty": "intermediate",
+      "difficulty": "advanced",
+      "rating": 5,
       "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkhpc3RvcmljVmFhbE9yYiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/07d4d75931/IncursionHistoricVaalOrb.png",
-      "summary": "바알의 운명 리그 전용 컨텐츠 - 사원 탐사 및 앗지리 처치",
-      "description": "바알의 운명 리그의 핵심 컨텐츠입니다. 고대 바알 제국의 사원을 탐사하며 구조를 변형하고, 최종 보스 앗지리를 처치하여 리그 전용 보상을 획득합니다.\n\n### 리그 특화 보상\n- 바알 전용 유니크 아이템\n- 특별 제작 옵션\n- 리그 고유 화폐",
+      "summary": "⭐⭐⭐⭐⭐ 일반 맵핑 효율의 10배! 0.4 사원런 최강 파밍",
+      "description": "바알 사원은 **일반 맵핑의 10배 이상** 효율을 가진 최강 컨텐츠입니다. 맵 6번마다 사원 진입이 가능하며, 희귀 몬스터 수 859%, 희귀도 300% 증가 등의 옵션이 **모든 방에 적용**됩니다.\n\n### 🔥 왜 사원런인가?\n- 모든 옵션이 사원의 **모든 방에 적용**\n- 맵핑 6번마다 쥬시한 사원 진입\n- 방 20개 세팅 후 엄청난 효율\n\n### 📌 핵심 3가지\n1. **희귀 몬스터 수** → 수첩수(위병소-첩보대장-위병소)\n2. **아이템 희귀도** → 연금술 연구소\n3. **희생의 재단** → 바알 하향 오브 (고정 수입)\n\n### 🎮 홀튼런 (25.12.29 막힘)\n레벨 73 이하로만 진행 가능한 꼼수. 막간의 홀튼에서 인스턴스 초기화로 수정 빠르게 획득 가능했음.",
       "requirements": [
-        "리그 컨텐츠 해금",
-        "사원 메카닉 이해",
-        "앗지리 처치 가능한 빌드"
+        "사원 메카닉 완전 이해 (방 배치 관계도 필수)",
+        "방 배치에 시간 투자 가능",
+        "방 파괴 방지 메달리온 확보"
       ],
-      "recommended_items": [],
+      "recommended_items": [
+        {
+          "name": "주아탈로틀리 메달리온",
+          "name_ko": "주아탈로틀리 메달리온",
+          "description": "방 파괴 방지 (가장 중요!). 첩보대장에서 높은 확률로 드랍. 한 판만 적용됨!"
+        },
+        {
+          "name": "퀴플라톨 메달리온",
+          "name_ko": "퀴플라톨 메달리온",
+          "description": "방 등급 상승. 희생의 재단이나 첩보대장에 사용"
+        },
+        {
+          "name": "바알 시뮬레이터",
+          "name_ko": "바알 시뮬레이터",
+          "description": "https://tetriszocker.github.io/atziri-temple-editor/ 에서 배치 연습 가능"
+        }
+      ],
       "steps": [
         {
           "step": 1,
-          "title": "사원 입장",
-          "description": "맵에서 바알 사원 입구 발견 및 입장"
+          "title": "테두리에 一자로 배치 시작",
+          "description": "수비(위병소) - 첩보대장 - 수비 or 첩보대장 - 수비로 시작. 테두리에 一자로 이어야 효율적!"
         },
         {
           "step": 2,
-          "title": "구조 설계",
-          "description": "사원 구조를 변형하여 원하는 보상 방 배치"
+          "title": "수첩수 패턴으로 메달리온 확보",
+          "description": "처음 2~3번은 '수비-첩보-수비-갑주-수비-첩보-수비' 패턴. 첩보대장에서 방파괴 방지 메달리온 확보가 목표!"
         },
         {
           "step": 3,
-          "title": "사원 클리어",
-          "description": "각 방의 몬스터 처치 및 보상 획득"
+          "title": "국룰 배치 반복",
+          "description": "수비-첩보-수비-갑주-수비-첩보-수비-갑주-수비-첩보... 이게 기본 국룰! 중간에 갑주 꼭 넣어야 함"
         },
         {
           "step": 4,
-          "title": "앗지리 처치",
-          "description": "최종 보스 앗지리 처치 후 고유 보상 획득"
+          "title": "희귀도 라인 추가",
+          "description": "희생방 없을 때: 연금술-마석학자-연금술 / 희생방 있을 때: 영혼-마석-희생-마석-영혼-갑주"
+        },
+        {
+          "step": 5,
+          "title": "희생의 재단 필수 배치",
+          "description": "희생의 재단 뜨면 반드시 배치! 3단계 달성시 바알 하향 오브 확정 드랍 (100억+ 가치)"
+        },
+        {
+          "step": 6,
+          "title": "끝방 메달리온으로 보호",
+          "description": "주아탈로틀리 메달리온을 끝방에 사용! 끝방만 지키면 중간방은 안 부숴짐"
         }
       ],
       "tips": [
-        "사원 구조 설계가 보상에 큰 영향",
-        "리그 한정 유니크는 고가에 거래됨",
-        "앗지리 메카닉 학습 필수"
+        "🚫 절대 금지: 앗지리/건축가 잡기, 끝과 끝 연결 (오징어링 = 전체 파괴)",
+        "🚫 지휘관 버그: 지휘관 먼저 박으면 첩보대장 안 뜸!",
+        "✅ 방 배치 핵심: 첩보대장 옆에는 위병소만 올 수 있음 (화살표 따라가기)",
+        "✅ 업그레이드: 위병소를 첩보대장 옆에 배치 → 군단으로 변환 (몬스터 증가)",
+        "✅ 중간방은 안 부숴지고 끝방만 파괴됨 → 끝방만 지키면 OK",
+        "✅ 메달리온 파괴방지는 한 판만 적용! 영구 아님",
+        "✅ 수정/메달리온 미리 채울 필요 없음 - 진행하면서 자연스럽게 증가",
+        "📊 시뮬레이터: https://tetriszocker.github.io/atziri-temple-editor/",
+        "📊 상호관계표: https://docs.google.com/spreadsheets/d/1MPKfVFmkhLK2sNxesLa8wnLyXGtlR9AslMTLnDyVLGE/"
       ],
-      "estimated_profit_min": 15,
-      "estimated_profit_max": 80,
+      "estimated_profit_min": 30,
+      "estimated_profit_max": 100,
       "investment_required": 0,
       "is_league_specific": true,
-      "source_url": "https://mkbn.mk.co.kr/news/it/11490767"
+      "creator_name": "김학구 (HAKGU)",
+      "creator_url": "https://www.youtube.com/@학구",
+      "source_url": "https://docs.google.com/document/d/1uznV5gFTPiSVab8aSBEtbLuKmsJU3lfEfTlL8srAMKM/"
     },
     {
       "slug": "abyss-farming",
@@ -358,6 +171,11 @@
         "보스 처치 가능한 DPS"
       ],
       "recommended_items": [
+        {
+          "name": "희귀도 징조",
+          "name_ko": "희귀도 징조",
+          "description": "경로석에 발라서 희귀도 증가 (약 0.3 div)"
+        },
         {
           "name": "심연 서판",
           "name_ko": "심연 서판",
@@ -377,21 +195,26 @@
       "steps": [
         {
           "step": 1,
+          "title": "경로석에 희귀도 징조 바르기",
+          "description": "희귀도 징조를 경로석에 발라서 드랍 희귀도 증가 (핵심!)"
+        },
+        {
+          "step": 2,
           "title": "아틀라스 설정",
           "description": "심연 관련 패시브 노드 활성화 (심연의 심장 확률 증가 등)"
         },
         {
-          "step": 2,
+          "step": 3,
           "title": "심연 균열 따라가기",
           "description": "맵에서 심연 발견시 균열을 따라 이동하며 몬스터 처치"
         },
         {
-          "step": 3,
+          "step": 4,
           "title": "심연의 심장 진입",
           "description": "균열 끝에 심연의 심장이 열리면 진입"
         },
         {
-          "step": 4,
+          "step": 5,
           "title": "보스 처치",
           "description": "리치 또는 추방자 보스 처치 후 보상 획득"
         }
@@ -412,78 +235,82 @@
     },
     {
       "slug": "abyss-breach-combo",
-      "name": "Abyss + Breach Combo Farming",
-      "name_ko": "심연+균열 콤보 파밍",
+      "name": "Breach + Abyss Combo Farming",
+      "name_ko": "균열+심연 콤보 파밍",
       "category": "mechanic",
-      "difficulty": "advanced",
+      "difficulty": "intermediate",
       "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lU3BsaW50ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4abb17ea8e/BreachstoneSplinter.png",
-      "summary": "심연과 균열을 동시에 활용하여 고밀도 몬스터 파밍으로 수익을 극대화하는 전략",
-      "description": "심연과 균열을 함께 활용하면 맵 내 몬스터 밀도가 크게 증가하여 아이템 드랍과 경험치 획득이 극대화됩니다. 두 메카닉의 시너지를 활용한 파밍 전략입니다.\n\n### 콤보의 장점\n- 몬스터 밀도 2배 이상 증가\n- 두 컨텐츠의 보상 동시 획득\n- 서판 조합으로 효율 극대화",
+      "summary": "균열 서판 1개 + 심연 서판 2개 조합으로 고밀도 몬스터 파밍",
+      "description": "균열과 심연을 함께 활용하면 맵 내 몬스터 밀도가 크게 증가합니다. **균열 서판 1개 + 심연 서판 2개** 조합이 핵심입니다.\n\n### 서판 조합\n- **균열 서판 1개**: 균열 등장\n- **심연 서판 2개**: 심연 등장 증가\n\n### 콤보의 장점\n- 몬스터 밀도 대폭 증가\n- 두 컨텐츠의 보상 동시 획득",
       "requirements": [
         "강력한 AoE 빌드",
         "심연 + 균열 아틀라스 노드",
-        "중급 이상의 자본 (10+ Divine)"
+        "균열 서판 1개 + 심연 서판 2개"
       ],
       "recommended_items": [
         {
-          "name": "심연 서판",
-          "name_ko": "심연 서판",
-          "description": "심연 등장 증가"
+          "name": "희귀도 징조",
+          "name_ko": "희귀도 징조",
+          "description": "경로석에 발라서 희귀도 증가 (약 0.3 div)"
         },
         {
           "name": "균열 서판",
           "name_ko": "균열 서판",
-          "description": "균열 등장 증가"
+          "description": "1개 사용"
         },
         {
-          "name": "사냥철",
-          "name_ko": "사냥철",
-          "description": "희귀 몬스터 증가"
+          "name": "심연 서판",
+          "name_ko": "심연 서판",
+          "description": "2개 사용"
         }
       ],
       "steps": [
         {
           "step": 1,
+          "title": "경로석에 희귀도 징조 바르기",
+          "description": "희귀도 징조를 경로석에 발라서 드랍 희귀도 증가 (핵심!)"
+        },
+        {
+          "step": 2,
           "title": "아틀라스 설정",
           "description": "심연과 균열 관련 노드 모두 활성화"
         },
         {
-          "step": 2,
+          "step": 3,
           "title": "서판 조합",
-          "description": "심연 + 균열 + 사냥철 서판 조합"
+          "description": "균열 서판 1개 + 심연 서판 2개 장착"
         },
         {
-          "step": 3,
+          "step": 4,
           "title": "맵 클리어",
           "description": "심연 균열을 따라가면서 균열도 열어서 동시 진행"
         },
         {
-          "step": 4,
+          "step": 5,
           "title": "보스 처치",
-          "description": "심연의 심장과 균열석 영역 모두 진입하여 보스 처치"
+          "description": "심연의 심장과 균열 영역 모두 클리어"
         }
       ],
       "tips": [
-        "맵 상태와 운에 따라 결과가 달라질 수 있음",
-        "다양한 서판 조합을 테스트하여 최적 조합 찾기",
-        "적절한 자본으로 시작하여 수익 안정화 후 스케일업"
+        "희귀도 징조를 경로석에 바르는 게 핵심!",
+        "균열 1개 + 심연 2개가 핵심 조합",
+        "AoE 빌드에서 효율 극대화",
+        "몬스터 밀도가 높아 경험치도 좋음"
       ],
-      "estimated_profit_min": 20,
-      "estimated_profit_max": 60,
-      "investment_required": 10,
+      "estimated_profit_min": 3,
+      "estimated_profit_max": 6,
+      "investment_required": 1.5,
       "is_league_specific": false,
-      "creator_name": "펍건 (PubGun)",
-      "creator_url": "https://www.youtube.com/@pubgun",
-      "source_url": "https://vortexgaming.io/postdetail/624744"
+      "source_url": ""
     },
     {
-      "slug": "ancient-crisis-fragment",
-      "name": "Ancient Crisis Fragment Farming",
-      "name_ko": "고대 위기 조각 파밍",
+      "slug": "boss-fragment-farming",
+      "name": "Boss Fragment Farming",
+      "name_ko": "보스 조각 파밍",
       "category": "boss",
       "difficulty": "intermediate",
       "icon": "https://web.poecdn.com//gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Ud2lsaWdodE9yZGVyUmVsaXF1YXJ5S2V5QXptZXJpIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/cf47ea370f/TwilightOrderReliquaryKeyAzmeri.png",
-      "summary": "경로석 드롭률을 최적화하여 고대 위기 조각을 효율적으로 획득하는 보스 진입 조각 파밍",
+      "summary": "경로석 드롭률을 최적화하여 보스 진입 조각을 효율적으로 획득하는 파밍",
       "description": "고대 위기 조각은 엔드게임 보스 진입에 필요한 핵심 아이템입니다. 경로석 드롭률을 조절하면 한 맵에서 최대 4개까지 획득할 수 있습니다.\n\n### 드롭률별 획득 개수\n- **300% 미만**: 기본 1개 드롭\n- **300~400%**: 2개 드롭\n- **900% 이상**: 3~4개 드롭\n- **1200% 초과**: 4개 드롭 확률 증가\n\n### 핵심 포인트\n경로석에 6개의 접미사를 부여하고, 아틀라스 패시브 트리를 최적화하면 드롭률을 크게 높일 수 있습니다.",
       "requirements": [
         "T15+ 성채맵 클리어 가능한 빌드",
@@ -618,11 +445,6 @@
           "name": "혼란스러운 징조",
           "name_ko": "혼란스러운 징조",
           "description": "저렴한 보상 증가 서판"
-        },
-        {
-          "name": "사냥철",
-          "name_ko": "사냥철",
-          "description": "희귀 몬스터 증가"
         }
       ],
       "steps": [

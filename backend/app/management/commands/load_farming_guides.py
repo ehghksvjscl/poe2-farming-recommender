@@ -58,6 +58,7 @@ class Command(BaseCommand):
                     "name_ko": method_data.get("name_ko", ""),
                     "category": method_data.get("category", "mapping"),
                     "difficulty": method_data.get("difficulty", "intermediate"),
+                    "rating": method_data.get("rating", 0),
                     "summary": method_data.get("summary", ""),
                     "description": method_data.get("description", ""),
                     "requirements": method_data.get("requirements", []),

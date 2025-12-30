@@ -102,6 +102,7 @@ class FarmingMethod(models.Model):
     slug = models.SlugField(unique=True, help_text="URL용 슬러그")
     category = models.CharField(max_length=32, choices=CATEGORY_CHOICES)
     difficulty = models.CharField(max_length=16, choices=DIFFICULTY_CHOICES, default="intermediate")
+    rating = models.PositiveSmallIntegerField(default=0, help_text="추천 별점 (0-5)")
     
     # 설명
     summary = models.TextField(help_text="요약 설명")

@@ -76,10 +76,18 @@ export default function FarmingGuide() {
     }
   };
 
+  // 숫자에서 불필요한 소수점 제거 (3.00 → 3, 3.50 → 3.5)
+  const formatNumber = (num) => {
+    if (!num && num !== 0) return "0";
+    const n = parseFloat(num);
+    if (n % 1 === 0) return n.toFixed(0);
+    return n.toFixed(1).replace(/\.0$/, '');
+  };
+
   const formatProfit = (min, max) => {
     if (!min && !max) return "-";
-    if (min === max) return `${min} div/h`;
-    return `${min}-${max} div/h`;
+    if (min === max) return `${formatNumber(min)} div/h`;
+    return `${formatNumber(min)}-${formatNumber(max)} div/h`;
   };
 
   return (
@@ -154,6 +162,11 @@ export default function FarmingGuide() {
                     <span className="method-icon">{method.icon}</span>
                   )}
                   <div className="method-badges">
+                    {method.rating > 0 && (
+                      <span className="rating-badge">
+                        {"⭐".repeat(method.rating)}
+                      </span>
+                    )}
                     <span
                       className="difficulty-badge"
                       style={{ backgroundColor: DIFFICULTY_COLORS[method.difficulty] }}
@@ -175,14 +188,14 @@ export default function FarmingGuide() {
                     <span className="stat-label">예상 수익</span>
                     <span className="stat-value profit">
                       <img src={DIVINE_ICON} alt="Divine" className="currency-icon-sm" />
-                      {method.estimated_profit_min}-{method.estimated_profit_max}/h
+                      {formatNumber(method.estimated_profit_min)}-{formatNumber(method.estimated_profit_max)}/h
                     </span>
                   </div>
                   <div className="stat">
                     <span className="stat-label">초기 투자</span>
                     <span className="stat-value investment">
                       <img src={DIVINE_ICON} alt="Divine" className="currency-icon-sm" />
-                      {method.investment_required}
+                      {formatNumber(method.investment_required)}
                     </span>
                   </div>
                 </div>
@@ -241,14 +254,14 @@ export default function FarmingGuide() {
                     <span className="profit-label">예상 수익 (시간당)</span>
                     <span className="profit-value">
                       <img src={DIVINE_ICON} alt="Divine" className="currency-icon-lg" />
-                      {selectedMethod.estimated_profit_min}-{selectedMethod.estimated_profit_max}
+                      {formatNumber(selectedMethod.estimated_profit_min)}-{formatNumber(selectedMethod.estimated_profit_max)}
                     </span>
                   </div>
                   <div className="profit-item">
                     <span className="profit-label">초기 투자</span>
                     <span className="profit-value investment">
                       <img src={DIVINE_ICON} alt="Divine" className="currency-icon-lg" />
-                      {selectedMethod.investment_required}
+                      {formatNumber(selectedMethod.investment_required)}
                     </span>
                   </div>
                 </div>
