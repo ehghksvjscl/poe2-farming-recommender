@@ -1,20 +1,39 @@
-# PoE2 Farming Recommender
+# My Project
 
-MVP 목표: PoE2에서 사용자 조건에 맞는 파밍 루트를 추천한다.
+Django + React 풀스택 프로젝트 템플릿
 
-## 실행 방법 (How to Run)
+## 프로젝트 구조
 
-### 한 번에 실행하기 (Recommended)
-Cursor(VS Code) 상단 메뉴에서 `Terminal` -> `Run Task` -> `Run Full Project (Backend + Frontend)`를 선택하거나, 터미널에서 아래 명령어를 실행하세요:
+```
+.
+├── backend/          # Django REST Framework 백엔드
+│   ├── app/          # 메인 앱
+│   ├── config/       # Django 설정
+│   └── data/         # 데이터 파일
+├── frontend/         # React (Vite) 프론트엔드
+│   └── src/
+│       ├── components/
+│       ├── hooks/
+│       └── utils/
+├── docs/             # 문서
+├── prompts/          # AI 프롬프트
+└── scripts/          # 자동화 스크립트
+```
+
+## 실행 방법
+
+### 한 번에 실행하기
 ```bash
 ./start-dev.sh
 ```
 
 ### 개별 실행하기
-#### 1. 백엔드 설정 (Django)
+
+#### 1. 백엔드 (Django)
 ```bash
 cd backend
-# 가상환경 생성 및 활성화 (선택 사항)
+
+# 가상환경 생성 및 활성화
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
@@ -24,64 +43,35 @@ pip install -r requirements.txt
 # 데이터베이스 마이그레이션
 python manage.py migrate
 
-# 서버 실행
+# 서버 실행 (http://localhost:8000)
 python manage.py runserver
 ```
 
-### 2. 프론트엔드 설정 (Vite + React)
+#### 2. 프론트엔드 (React)
 ```bash
 cd frontend
+
 # 의존성 설치
 npm install
 
-# 개발 서버 실행
+# 개발 서버 실행 (http://localhost:5173)
 npm run dev
 ```
 
-## 환경 변수 (.env)
-- **Backend (`backend/.env`)**: `SECRET_KEY`, `DEBUG`, `ALLOWED_HOSTS` 설정
-- **Frontend (`frontend/.env`)**: `VITE_API_URL` (백엔드 API 주소) 설정
+## API 엔드포인트
 
-## 추천 입력 데이터
-...
-- 캐릭터 레벨
-- 빌드 유형
-- 선호 난이도
-- 시간당 수익 목표
-- 플레이 가능 시간
-- 선호 콘텐츠(예: 맵핑, 보스, 델브)
-- 보유 장비 수준
-- 파티 여부
-- 리그/시즌 구분
+- `GET /api/health/` - 헬스체크
 
-## 추천 출력 형식
-- 추천 지역/맵 리스트
-- 각 추천의 예상 효율(시간당 수익, 경험치 등)
-- 추천 사유(입력 조건과의 매칭 요약)
-- 필요 장비/재료 및 준비 사항
+## 환경 변수
 
-## 비기능 요구사항
-- 업데이트 주기: 게임 패치/리그 변화에 맞춰 정기 업데이트
-- 데이터 출처: 공식 패치 노트, 커뮤니티 데이터, 공개된 시장/거래 정보
-- UI 형태: 웹 기반 간단한 폼 입력 + 추천 결과 카드/테이블 표시
-
-## 초기 디렉터리 구조
+### Backend (`backend/.env`)
 ```
-.
-├── backend/
-│   └── data/
-├── docs/
-├── frontend/
-└── scripts/
+SECRET_KEY=your-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
 ```
 
-## 폴더 역할
-- `backend/`: 추천 로직, 데이터 처리 API, 추후 서비스 백엔드 코드가 위치한다.
-- `backend/data/`: 추천 계산에 필요한 원천 데이터 및 중간 가공 산출물을 보관한다.
-  - 예: 파밍 지역별 드롭/수익 지표, 리그/패치별 파밍 메타 요약, 보스/맵 난이도 지표
-  - 데이터 파일은 `raw/`(수집 원본), `processed/`(정규화/집계 결과) 하위 폴더로 분리하는 것을 기본으로 한다.
-- `docs/`: 기획 문서, 데이터 스키마, 정책 등 프로젝트 문서화 자료를 관리한다.
-- `frontend/`: 사용자 입력 폼과 추천 결과를 보여주는 UI 코드가 위치한다.
-  - 예: 입력 폼 컴포넌트, 추천 결과 카드/테이블, UI 상태 관리 로직
-- `scripts/`: 데이터 수집/정제/검증 자동화 스크립트를 모은다.
-  - 예: 공식 패치 노트 크롤러, 커뮤니티 데이터 수집기, 데이터 품질 체크/리포트 생성 도구
+### Frontend (`frontend/.env`)
+```
+VITE_API_URL=http://localhost:8000/api
+```

@@ -3,7 +3,7 @@
 # Exit on error
 set -e
 
-echo "🚀 Starting PoE2 Farming Recommender Dev Environment..."
+echo "🚀 Starting Dev Environment..."
 
 # Function to kill background processes on exit
 cleanup() {
@@ -39,8 +39,8 @@ if [ -f ".env" ]; then
 fi
 
 python manage.py migrate --run-syncdb
-echo "🟢 Starting Django server on port 8001..."
-python manage.py runserver 0.0.0.0:8001 &
+echo "🟢 Starting Django server on port 8000..."
+python manage.py runserver 0.0.0.0:8000 &
 BACKEND_PID=$!
 
 # Start Frontend
@@ -60,7 +60,7 @@ echo ""
 echo "======================================="
 echo "✅ Development servers are running!"
 echo "---------------------------------------"
-echo "🔗 Backend:  http://localhost:8001"
+echo "🔗 Backend:  http://localhost:8000"
 echo "🔗 Frontend: http://localhost:5173"
 echo "======================================="
 echo "Press Ctrl+C to stop all servers"
@@ -68,4 +68,3 @@ echo ""
 
 # Wait for processes
 wait
-
